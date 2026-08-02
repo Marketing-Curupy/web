@@ -1,83 +1,684 @@
-Curupy Acqua Park
-💬 Fale com o Acqua 
-Curupy Acqua Park
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-Diversão que vira lembrança.
-Viva um dia especial com quem você ama.
+  <title>Central do Visitante Curupy</title>
 
-🎟️ Comprar ingresso
-Família aproveitando o Curupy Acqua Park
-💰 Compre online e economize!
+  <meta
+    name="description"
+    content="Central do Visitante Curupy Acqua Park: ingressos, funcionamento, convidado de sócio, hospedagem, associação e informações para sua visita."
+  />
 
-🎉 Ofertas Especiais → 🎟️ Ingressos → 📅 Funcionamento → ⭐ Convidado de Sócio → 🏨 Hospedagem → 💎 Torne-se Sócio →
-💧
-Precisa de ajuda?
+  <link rel="stylesheet" href="style.css" />
 
-Converse com o Acqua
-Tirar uma dúvida →
-Viva a experiência
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
 
-Conheça o Curupy
-Curupy Acqua Park
-Viva o que importa! 💙
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap"
+    rel="stylesheet"
+  />
+</head>
 
-Como chegar Dúvidas WhatsApp
-   
-© 2026 Curupy Acqua Park. Todos os direitos reservados.
- Início  Ingressos 💧 Acqua  Chegar  Mais
-×
-📅 Calendário de funcionamento
-×
-Fechar
-Política de Meia-Entrada e Gratuidade
-×
-Meia-Entrada ⌃
-A meia-entrada é válida exclusivamente sobre o valor da tabela padrão da portaria.
+<body>
 
-A venda de ingressos com meia-entrada é realizada somente na bilheteria, no dia da visita, mediante apresentação da documentação exigida por lei.
+  <!-- =====================================================
+       TOPO / IDENTIDADE
+  ====================================================== -->
+  <header class="site-header" id="topo">
+    <div class="site-header-inner container">
+      <a class="brand" href="#topo" aria-label="Curupy Acqua Park">
+        <img src="logo-curupy.png" alt="Curupy Acqua Park" />
+      </a>
 
-Têm direito à meia-entrada:
-Estudantes com carteira estudantil válida.
-Professores da rede Estadual ou Municipal de Mato Grosso mediante identificação funcional válida.
-Doadores regulares de sangue e doadores de medula óssea mediante comprovação válida.
-Pessoas com 60 anos ou mais mediante documento oficial com foto.
-Importante: não serão aceitas cópias, fotografias ou documentos vencidos.
-Gratuidade para PCD ⌄
-Pessoas com Deficiência possuem direito à gratuidade mediante apresentação de documento oficial que comprove a condição.
+      <div class="header-actions">
+        <button
+          class="header-help"
+          type="button"
+          onclick="abrirModal('modalAjuda')"
+        >
+          <span aria-hidden="true">💬</span>
+          <span>Fale com o Acqua</span>
+        </button>
 
-O direito ao acompanhante será analisado conforme a documentação apresentada.
+        <button
+          class="header-menu"
+          type="button"
+          onclick="abrirModal('modalMenuMais')"
+          aria-label="Abrir mais opções"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
 
-Gratuidade para TEA ⌄
-Pessoas com Transtorno do Espectro Autista possuem direito à gratuidade mediante apresentação da CIPTEA ou documento oficial que comprove a condição.
+  <main>
 
-Nestes casos também é garantido o direito ao acompanhante.
+    <!-- =====================================================
+         HERO / BANNER DINÂMICO
+         O conteúdo poderá ser substituído depois por fonte externa.
+    ====================================================== -->
+    <section class="hero-banner container" aria-label="Destaque do Curupy">
+      <div class="hero-banner-content">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Curupy Acqua Park</p>
 
-Regras para Acompanhantes ⌄
-Ter idade mínima de 18 anos.
-Apresentar documento oficial com foto.
-A validação será realizada pela equipe da bilheteria.
+          <h1 id="heroTitulo">
+            Diversão que
+            <span>vira lembrança.</span>
+          </h1>
 
-Entendi
-×
-⭐ Convidado de Sócio
-Consulte os valores e condições aplicáveis ao convidado de sócio para a data da visita.
+          <p id="heroSubtitulo" class="hero-subtitle">
+            Viva um dia especial com quem você ama.
+          </p>
 
-Consultar uma data
-×
-🎉
-Destaques disponíveis
+          <button
+            id="heroBotao"
+            class="hero-cta"
+            type="button"
+            onclick="openIngressosModal()"
+          >
+            🎟️ Comprar ingresso
+          </button>
+        </div>
 
-Ofertas Especiais
-Consultando ofertas disponíveis...
-×
-💧 Assistente Curupy
-× Foto Curupy
-×
-Em breve
-Esta área está em desenvolvimento e será disponibilizada em breve.
+        <div class="hero-media">
+          <picture>
+            <source
+              id="heroImagemMobileSource"
+              media="(max-width: 768px)"
+              srcset="assets/banner-curupy-mobile.jpg"
+            />
 
-Entendi
-×
-Mais opções
-📍 Como chegar 🏨 Hospedagem 💎 Torne-se Sócio ℹ️ Meia-entrada 💬 WhatsApp ❓ Dúvidas
-× 
+            <img
+              id="heroImagem"
+              src="assets/banner-curupy.jpg"
+              alt="Família aproveitando o Curupy Acqua Park"
+            />
+          </picture>
+
+          <div id="heroSelo" class="hero-badge">
+            <span class="hero-badge-icon">💰</span>
+            <strong>Compre online</strong>
+            <small>e economize!</small>
+          </div>
+        </div>
+      </div>
+
+      <div id="heroDots" class="hero-dots" aria-label="Banners disponíveis">
+        <button class="active" type="button" aria-label="Banner 1"></button>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ACESSOS PRINCIPAIS
+    ====================================================== -->
+    <section class="quick-actions container" aria-label="Acessos principais">
+
+      <!-- Só aparece quando houver promoção ativa -->
+      <button
+        id="cardOfertasEspeciais"
+        class="quick-card quick-card-offer hidden"
+        type="button"
+        onclick="abrirModal('modalOfertasEspeciais')"
+      >
+        <span class="quick-icon">🎉</span>
+        <strong>Ofertas Especiais</strong>
+        <span class="quick-arrow">→</span>
+      </button>
+
+      <button
+        class="quick-card quick-card-ticket"
+        type="button"
+        onclick="openIngressosModal()"
+      >
+        <span class="quick-icon">🎟️</span>
+        <strong>Ingressos</strong>
+        <span class="quick-arrow">→</span>
+      </button>
+
+      <button
+        class="quick-card quick-card-calendar"
+        type="button"
+        onclick="abrirModal('modalCalendario')"
+      >
+        <span class="quick-icon">📅</span>
+        <strong>Funcionamento</strong>
+        <span class="quick-arrow">→</span>
+      </button>
+
+      <button
+        class="quick-card quick-card-guest"
+        type="button"
+        onclick="abrirModal('modalConvidadoSocio')"
+      >
+        <span class="quick-icon">⭐</span>
+        <strong>Convidado de Sócio</strong>
+        <span class="quick-arrow">→</span>
+      </button>
+
+      <button
+        class="quick-card quick-card-hosting"
+        type="button"
+        onclick="abrirPaginaHospedagem()"
+      >
+        <span class="quick-icon">🏨</span>
+        <strong>Hospedagem</strong>
+        <span class="quick-arrow">→</span>
+      </button>
+
+      <button
+        class="quick-card quick-card-member"
+        type="button"
+        onclick="abrirPaginaAssociados()"
+      >
+        <span class="quick-icon">💎</span>
+        <strong>Torne-se Sócio</strong>
+        <span class="quick-arrow">→</span>
+      </button>
+    </section>
+
+    <!-- =====================================================
+         BARRA DE STATUS
+         Preenchida por renderizarBarra() no script.js.
+         Ao rolar, recebe a classe .fixa.
+    ====================================================== -->
+    <section
+      id="barraStatus"
+      class="barra-fixa"
+      aria-live="polite"
+      aria-label="Status do parque e valores de bilheteria"
+    ></section>
+
+    <!-- =====================================================
+         CONTEÚDO COMPLEMENTAR
+    ====================================================== -->
+    <section class="support-section container">
+      <div class="support-heading">
+        <span class="support-avatar">💧</span>
+
+        <div>
+          <p>Precisa de ajuda?</p>
+          <h2>Converse com o Acqua</h2>
+        </div>
+      </div>
+
+      <button
+        class="support-button"
+        type="button"
+        onclick="abrirModal('modalAjuda')"
+      >
+        Tirar uma dúvida
+        <span>→</span>
+      </button>
+    </section>
+
+    <section class="gallery-section container">
+      <div class="section-heading">
+        <div>
+          <p>Viva a experiência</p>
+          <h2>Conheça o Curupy</h2>
+        </div>
+      </div>
+
+      <div id="galeriaCurupy" class="galeria-masonry"></div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       RODAPÉ
+  ====================================================== -->
+  <footer class="footer-curupy">
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <img src="logo-curupy.png" alt="Curupy Acqua Park" />
+        <p>Viva o que importa! 💙</p>
+      </div>
+
+      <div class="footer-links">
+        <button type="button" onclick="abrirMapa()">Como chegar</button>
+        <button type="button" onclick="abrirModal('modalAjuda')">Dúvidas</button>
+        <button type="button" onclick="abrirWhatsAppAjuda('outros')">WhatsApp</button>
+      </div>
+
+      <div class="footer-social">
+        <a
+          href="https://www.instagram.com/curupyacquapark/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a
+          href="https://www.facebook.com/CurupyAcquaParkHotel"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@curupyacquapark"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok"
+        >
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a
+          href="https://www.youtube.com/@CurupyAcquaParkHotelOficial"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+        >
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-copy">
+      © 2026 Curupy Acqua Park. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       NAVEGAÇÃO INFERIOR
+  ====================================================== -->
+  <nav class="bottom-nav" aria-label="Navegação rápida">
+    <button type="button" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+      <i class="fa-solid fa-house"></i>
+      <span>Início</span>
+    </button>
+
+    <button type="button" onclick="openIngressosModal()">
+      <i class="fa-solid fa-ticket"></i>
+      <span>Ingressos</span>
+    </button>
+
+    <button class="bottom-nav-main" type="button" onclick="abrirModal('modalAjuda')">
+      <span class="bottom-nav-avatar">💧</span>
+      <span>Acqua</span>
+    </button>
+
+    <button type="button" onclick="abrirMapa()">
+      <i class="fa-solid fa-location-dot"></i>
+      <span>Chegar</span>
+    </button>
+
+    <button type="button" onclick="abrirModal('modalMenuMais')">
+      <i class="fa-solid fa-ellipsis"></i>
+      <span>Mais</span>
+    </button>
+  </nav>
+
+  <!-- =====================================================
+       MODAL: CALENDÁRIO
+  ====================================================== -->
+  <div class="modal" id="modalCalendario">
+    <div class="modal-box grande">
+      <button
+        class="fechar"
+        type="button"
+        onclick="fecharModal('modalCalendario')"
+        aria-label="Fechar calendário"
+      >
+        ×
+      </button>
+
+      <h2>📅 Calendário de funcionamento</h2>
+      <div id="calendariosContainer"></div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       MODAL: DIA DO CALENDÁRIO
+  ====================================================== -->
+  <div class="modal" id="modalDiaCalendario">
+    <div class="modal-box dia-modal">
+      <button
+        class="fechar"
+        type="button"
+        onclick="fecharModal('modalDiaCalendario')"
+        aria-label="Fechar"
+      >
+        ×
+      </button>
+
+      <div id="conteudoDiaCalendario"></div>
+
+      <button
+        class="btn rosa full"
+        type="button"
+        onclick="fecharModal('modalDiaCalendario')"
+      >
+        Fechar
+      </button>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       MODAL: MEIA-ENTRADA
+  ====================================================== -->
+  <div class="modal" id="modalMeia">
+    <div class="modal-box meia-modal">
+      <div class="meia-header">
+        <h2>Política de Meia-Entrada e Gratuidade</h2>
+
+        <button
+          class="fechar meia-fechar"
+          type="button"
+          onclick="fecharModal('modalMeia')"
+          aria-label="Fechar"
+        >
+          ×
+        </button>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item active">
+          <button class="accordion-header" type="button">
+            Meia-Entrada <span>⌃</span>
+          </button>
+
+          <div class="accordion-content">
+            <p>
+              A meia-entrada é válida exclusivamente sobre o valor da tabela padrão da portaria.
+            </p>
+
+            <p>
+              A venda de ingressos com meia-entrada é realizada somente na bilheteria, no dia da visita, mediante apresentação da documentação exigida por lei.
+            </p>
+
+            <h4>Têm direito à meia-entrada:</h4>
+
+            <ul>
+              <li>Estudantes com carteira estudantil válida.</li>
+              <li>Professores da rede Estadual ou Municipal de Mato Grosso mediante identificação funcional válida.</li>
+              <li>Doadores regulares de sangue e doadores de medula óssea mediante comprovação válida.</li>
+              <li>Pessoas com 60 anos ou mais mediante documento oficial com foto.</li>
+            </ul>
+
+            <div class="alerta-importante">
+              Importante: não serão aceitas cópias, fotografias ou documentos vencidos.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            Gratuidade para PCD <span>⌄</span>
+          </button>
+
+          <div class="accordion-content">
+            <p>
+              Pessoas com Deficiência possuem direito à gratuidade mediante apresentação de documento oficial que comprove a condição.
+            </p>
+            <p>
+              O direito ao acompanhante será analisado conforme a documentação apresentada.
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            Gratuidade para TEA <span>⌄</span>
+          </button>
+
+          <div class="accordion-content">
+            <p>
+              Pessoas com Transtorno do Espectro Autista possuem direito à gratuidade mediante apresentação da CIPTEA ou documento oficial que comprove a condição.
+            </p>
+            <p>Nestes casos também é garantido o direito ao acompanhante.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            Regras para Acompanhantes <span>⌄</span>
+          </button>
+
+          <div class="accordion-content">
+            <ul>
+              <li>Ter idade mínima de 18 anos.</li>
+              <li>Apresentar documento oficial com foto.</li>
+            </ul>
+            <p>A validação será realizada pela equipe da bilheteria.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="meia-footer">
+        <button
+          class="btn rosa full"
+          type="button"
+          onclick="fecharModal('modalMeia')"
+        >
+          Entendi
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       MODAL: CONVIDADO DE SÓCIO
+       Conteúdo inicial simples; depois pode ser preenchido por dados externos.
+  ====================================================== -->
+  <div class="modal" id="modalConvidadoSocio">
+    <div class="modal-box">
+      <button
+        class="fechar"
+        type="button"
+        onclick="fecharModal('modalConvidadoSocio')"
+        aria-label="Fechar"
+      >
+        ×
+      </button>
+
+      <h2>⭐ Convidado de Sócio</h2>
+
+      <div class="modal-content-block">
+        <p>
+          Consulte os valores e condições aplicáveis ao convidado de sócio para a data da visita.
+        </p>
+
+        <button
+          class="btn azul full"
+          type="button"
+          onclick="abrirModal('modalCalendario'); fecharModal('modalConvidadoSocio')"
+        >
+          Consultar uma data
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       MODAL: OFERTAS ESPECIAIS
+       O card e o conteúdo serão exibidos apenas com promoções ativas.
+  ====================================================== -->
+  <div class="modal" id="modalOfertasEspeciais">
+    <div class="modal-box grande">
+      <button
+        class="fechar"
+        type="button"
+        onclick="fecharModal('modalOfertasEspeciais')"
+        aria-label="Fechar"
+      >
+        ×
+      </button>
+
+      <div class="modal-title-group">
+        <span>🎉</span>
+        <div>
+          <p>Destaques disponíveis</p>
+          <h2>Ofertas Especiais</h2>
+        </div>
+      </div>
+
+      <div id="ofertasEspeciaisContainer" class="offers-grid">
+        <div class="loading-card">
+          Consultando ofertas disponíveis...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       MODAL: AJUDA / ACQUA
+  ====================================================== -->
+  <div class="modal" id="modalAjuda">
+    <div class="modal-box">
+      <button
+        class="fechar"
+        type="button"
+        onclick="fecharModal('modalAjuda')"
+        aria-label="Fechar"
+      >
+        ×
+      </button>
+
+      <h2>💧 Assistente Curupy</h2>
+      <div id="ajudaContainer"></div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       MODAL: FOTO
+  ====================================================== -->
+  <div class="modal" id="modalFoto">
+    <div class="foto-box">
+      <button
+        class="fechar"
+        type="button"
+        onclick="fecharModal('modalFoto')"
+        aria-label="Fechar foto"
+      >
+        ×
+      </button>
+
+      <img id="fotoAberta" src="" alt="Foto Curupy" />
+    </div>
+  </div>
+
+  <!-- =====================================================
+       MODAL: EM BREVE
+  ====================================================== -->
+  <div class="modal" id="modalEmBreve">
+    <div class="modal-box">
+      <button
+        class="fechar"
+        type="button"
+        onclick="fecharModal('modalEmBreve')"
+        aria-label="Fechar"
+      >
+        ×
+      </button>
+
+      <h2 id="tituloEmBreve">Em breve</h2>
+      <p id="textoEmBreve">
+        Esta área está em desenvolvimento e será disponibilizada em breve.
+      </p>
+
+      <button
+        class="btn rosa full"
+        type="button"
+        onclick="fecharModal('modalEmBreve')"
+      >
+        Entendi
+      </button>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       MODAL: MAIS OPÇÕES
+  ====================================================== -->
+  <div class="modal" id="modalMenuMais">
+    <div class="modal-box menu-more-box">
+      <button
+        class="fechar"
+        type="button"
+        onclick="fecharModal('modalMenuMais')"
+        aria-label="Fechar menu"
+      >
+        ×
+      </button>
+
+      <h2>Mais opções</h2>
+
+      <div class="menu-more-grid">
+        <button type="button" onclick="abrirMapa()">
+          <span>📍</span>
+          <strong>Como chegar</strong>
+        </button>
+
+        <button type="button" onclick="abrirPaginaHospedagem()">
+          <span>🏨</span>
+          <strong>Hospedagem</strong>
+        </button>
+
+        <button type="button" onclick="abrirPaginaAssociados()">
+          <span>💎</span>
+          <strong>Torne-se Sócio</strong>
+        </button>
+
+        <button type="button" onclick="abrirModal('modalMeia')">
+          <span>ℹ️</span>
+          <strong>Meia-entrada</strong>
+        </button>
+
+        <button type="button" onclick="abrirWhatsAppAjuda('outros')">
+          <span>💬</span>
+          <strong>WhatsApp</strong>
+        </button>
+
+        <button type="button" onclick="abrirModal('modalAjuda')">
+          <span>❓</span>
+          <strong>Dúvidas</strong>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       MODAL / IFRAME DE INGRESSOS
+  ====================================================== -->
+  <div id="ingressosModal" class="iframe-modal">
+    <div class="iframe-box">
+      <button
+        class="iframe-close"
+        type="button"
+        onclick="closeIngressosModal()"
+        aria-label="Fechar ingressos"
+      >
+        ×
+      </button>
+
+      <iframe
+        id="iframeIngressos"
+        src=""
+        title="Ingressos Curupy"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       SCRIPTS EXISTENTES
+  ====================================================== -->
+  <script src="dados-barra.js"></script>
+  <script src="calendarios.js"></script>
+  <script src="script.js"></script>
+  <script src="galeria/galeria.js"></script>
+
+</body>
+</html>
